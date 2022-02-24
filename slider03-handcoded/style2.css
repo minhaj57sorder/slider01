@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #0f2027;
+    background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+    overflow: hidden;
+  }
+  .scopeP {
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg);
+  }
+  
+  .scope {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(0deg);
+    animation: makeYrotate 12s ease-in-out infinite;
+  }
+  
+  .scope span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 120deg)) translateZ(100px);
+  }
+  .scope span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+@keyframes makeYrotate{
+  0%{
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  8.33%{
+    transform: perspective(1000px) rotateY(120deg);
+  }
+  33.32%{
+    transform: perspective(1000px) rotateY(120deg);
+  }
+  41.65%{
+    transform: perspective(1000px) rotateY(240deg);
+  }
+  66.64%{
+    transform: perspective(1000px) rotateY(240deg);
+  }
+  74.97%{
+    transform: perspective(1000px) rotateY(360deg);
+  }
+  100%{
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
